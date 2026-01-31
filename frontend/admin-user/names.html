@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Monopoly UPS - Nombres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen-container">
+        <header class="main-header"><h1>🎓 REGISTRO DE JUGADORES</h1></header>
+        <main class="login-card">
+            <h2>Personaliza tu Partida</h2>
+            <form id="names-form" onsubmit="submitNames(event)">
+                <div id="inputs-container"></div> 
+                <button type="submit" class="btn-action btn-large">▶ ¡A JUGAR!</button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const num = localStorage.getItem('numPlayers') || 2;
+            const c = document.getElementById('inputs-container');
+            c.innerHTML = "";
+            for(let i=0; i<num; i++) {
+                c.innerHTML += `<div class="form-group"><label>Jugador ${i+1}:</label><input type="text" id="name-${i}" class="input-style" required></div>`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Profesor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen-container">
+        <header class="game-header" style="width:100%; justify-content:center; position:fixed; top:0;">
+            <h1>👨‍🏫 PANEL DEL PROFESOR</h1>
+        </header>
+
+        <main class="login-card" style="width: 500px; margin-top:80px;">
+            <h2>Agregar Pregunta</h2>
+            
+            <form id="question-form" onsubmit="saveQuestionLocal(event)">
+                
+                <div class="form-group">
+                    <label>Materia:</label>
+                    <select id="t-materia" class="input-style">
+                        <option value="math">Matemáticas</option>
+                        <option value="lang">Lengua</option>
+                        <option value="hist">Historia</option>
+                        <option value="sci">Ciencias</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Dificultad:</label>
+                    <select id="t-dificultad" class="input-style">
+                        <option value="facil">Básica</option>
+                        <option value="medio">Media</option>
+                        <option value="dificil">Avanzada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Pregunta:</label>
+                    <input type="text" id="t-texto" class="input-style" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Opciones (Marca la correcta):</label>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                        <input type="radio" name="correcta" value="0" checked>
+                        <input type="text" id="t-op1" class="input-style" placeholder="Opción 1" required>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <input type="radio" name="correcta" value="1">
+                        <input type="text" id="t-op2" class="input-style" placeholder="Opción 2" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-action">GUARDAR</button>
+                <button type="button" class="btn-small" style="margin-top:10px; width:100%; background:#7f8c8d;" onclick="window.location.href='index.html'">Volver al Inicio</button>
+            </form>
+            <p id="msg-status" style="margin-top:15px; font-weight:bold;"></p>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

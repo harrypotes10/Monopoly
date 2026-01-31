@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Monopoly UPS - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen-container">
+        <header class="main-header">
+            <h1>🎓 MONOPOLY EDUCATIVO</h1>
+            <p>Proyecto Integrador UPS</p>
+        </header>
+
+        <main class="login-card">
+            <h2>Configuración de Partida</h2>
+            
+            <div class="form-group">
+                <label>Cantidad de Estudiantes:</label>
+                <div class="player-selection">
+                    <button class="btn-select" id="btn-2" onclick="selectPlayers(2)">2</button>
+                    <button class="btn-select" id="btn-3" onclick="selectPlayers(3)">3</button>
+                    <button class="btn-select" id="btn-4" onclick="selectPlayers(4)">4</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Dificultad:</label>
+                <select id="difficulty" class="input-style">
+                    <option value="facil">🟢 Básica</option>
+                    <option value="medio" selected>🟡 Media</option>
+                    <option value="dificil">🔴 Avanzada</option>
+                </select>
+            </div>
+
+            <button class="btn-action btn-large" onclick="goToNames()">SIGUIENTE: NOMBRES >></button>
+            
+            <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px;">
+                <a href="teacher.html" style="color: #3498db; text-decoration: none; font-size: 0.9rem;">👨‍🏫 Ingreso Docente</a>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

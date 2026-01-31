@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Monopoly UPS - En Juego</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="game-header">
+        <div class="header-left">
+            <h2>Partida en Curso</h2>
+            <div class="turn-indicator">Turno: <span id="header-player-name" style="font-weight:bold;">--</span></div>
+        </div>
+        <button class="btn-small" onclick="window.location.href='index.html'">Salir</button>
+    </header>
+
+    <main class="main-layout">
+        <aside class="left-panel">
+            <div class="dice-card">
+                <h3>JUGAR</h3>
+                <div class="dice-box"><div id="dice-visual">🎲</div></div>
+                <p id="dice-result-text">Tu turno</p>
+                <button id="btn-roll" class="btn-action" onclick="rollDigitalDice()">LANZAR</button>
+            </div>
+            <div class="legend-card">
+                <h4>MATERIAS</h4>
+                <div class="legend-grid">
+                    <div class="legend-item"><span class="dot math"></span> Mate</div>
+                    <div class="legend-item"><span class="dot lang"></span> Lengua</div>
+                    <div class="legend-item"><span class="dot sci"></span> Ciencias</div>
+                    <div class="legend-item"><span class="dot hist"></span> Historia</div>
+                    <div class="legend-item"><span class="dot luck"></span> Suerte</div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="board-container">
+            <div class="monopoly-board" id="board">
+                <div class="board-center">
+                    <h2>UPS</h2>
+                    <p>Sist. Embebidos</p>
+                </div>
+                <div id="tokens-container"></div>
+            </div>
+        </div>
+
+        <aside class="right-panel">
+            <div id="panel-ranking" class="info-card">
+                <h3>🏆 RANKING</h3>
+                <ul id="ranking-list" class="ranking-list"></ul>
+                <button class="btn-end-game" onclick="endGameManually()">Finalizar</button>
+            </div>
+
+            <div id="panel-question" class="question-card hidden-panel">
+                <div id="q-header" class="q-header">MATERIA</div>
+                <div class="q-body">
+                    <p id="q-text" class="q-text">...</p>
+                    <div id="answers-container" class="answers-grid"></div>
+                    <p id="feedback-msg" class="feedback"></p>
+                    <button id="btn-close-event" class="btn-ans hidden" onclick="closeEvent()">Continuar >></button>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
